@@ -2,8 +2,11 @@
 
 require '../lib/hangman.rb'
 require 'date'
+require 'yaml'
 
-I = Hangman::Player.new("https://strikingly-hangman.herokuapp.com/game/on", "shiwen_l@126.com")
+account = YAML.load_file('../config/config.yaml')
+
+I = Hangman::Player.new(account["url"], account["id"])
 
 
 puts "===New game started with sessionId: #{I.start}"
