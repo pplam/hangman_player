@@ -104,7 +104,7 @@ module Hangman
       data = {
         sessionId: @sessionId,
         action: "getResult"
-      }.to_json
+      }
       return ::Hangman.post(@url, data)
     end
 
@@ -112,7 +112,7 @@ module Hangman
       data = {
         sessionId: @sessionId,
         action: "submitResult"
-      }.to_json
+      }
       return ::Hangman.post(@url, data)
     end
   end
