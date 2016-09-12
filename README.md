@@ -7,11 +7,12 @@ bundle install
 cd bin
 ./playaround.rb
 ~~~
+
 Staring at the outputs
 
 ......
 
-Dazing a long long time
+Dazing in a long long time
 
 ......
 
