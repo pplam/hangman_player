@@ -19,11 +19,7 @@ cd bin
 ~~~
 
 Staring at the outputs
-
 ......
-
 Dazing in a long long time
-
 ......
-
 Wake up to check the score
