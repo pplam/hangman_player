@@ -8,7 +8,11 @@ cd bin
 ./playaround.rb
 ~~~
 Staring at the outputs
-...
+
+......
+
 Dazing a long long time
-...
+
+......
+
 Wake up to check the score
