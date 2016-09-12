@@ -1,6 +1,7 @@
 #!/usr/bin/env ruby
 
 require '../lib/hangman.rb'
+require 'date'
 
 I = Hangman::Player.new("https://strikingly-hangman.herokuapp.com/game/on", "shiwen_l@126.com")
 
@@ -25,10 +26,10 @@ puts "| totalWrongGuessCount: #{resp['data']['totalWrongGuessCount']}"
 puts "| score: #{score}"
 puts
 
-pre_score = File.exist?("../scores") ? IO.readlines("../scores")[-1].to_i : 0
-File.open("../scores", 'a'){ |f| f.puts score }
+max_score = File.exist?("../scores") ? IO.readlines('../scores').map{|l| l.split('@')[0].to_i }.max : 0
+File.open("../scores", 'a'){ |f| f.puts "#{score}@#{DateTime.now.strftime('%e %b %Y %H:%M:%S%p')}" }
 
-if score > pre_score
+if score > max_score
   sub_res = I.submit
   puts '%%%%%%%%%%%%%%%%%%%%%%%%'
   puts ">>>Session #{sub_res['sessionId']} submitted at #{sub_res['data']['datetime']}."
